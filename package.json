@@ -1,0 +1,36 @@
+{
+  "name": "rokii-plugins",
+  "private": true,
+  "description": "Plugins for Rokii app",
+  "workspaces": [
+    "plugins/*"
+  ],
+  "scripts": {
+    "lint": "turbo lint",
+    "build": "turbo build",
+    "publish-packages": "turbo run lint build && changeset version && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.27.1",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "6.19.0",
+    "eslint": "8.56.0",
+    "semistandard": "17.0.0",
+    "standard": "17.1.0",
+    "turbo": "1.11.3",
+    "typescript": "5.3.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.48"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "$react",
+      "react-dom": "$react-dom",
+      "@types/react": "$@types/react",
+      "typescript": "$typescript",
+      "@rokii/build": "2.0.2",
+      "@rokii/types": "4.0.0"
+    }
+  }
+}

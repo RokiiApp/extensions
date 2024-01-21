@@ -1,0 +1,21 @@
+{
+    "name": "@rokii-plugins/test",
+    "version": "0.0.2",
+    "description": "A plugin for Rokii for testing purposes",
+    "type": "module",
+    "scripts": {
+        "build": "rokii-build build",
+        "dev": "rokii-build dev"
+    },
+    "devDependencies": {
+        "react": "*",
+        "@rokii/build": "*",
+        "@rokii/types": "*"
+    },
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public"
+    }
+}
