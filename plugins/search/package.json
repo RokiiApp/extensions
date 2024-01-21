@@ -1,0 +1,29 @@
+{
+  "name": "@rokii-plugins/search",
+  "version": "0.0.0",
+  "description": "Use your favourite search engine in RokiiApp",
+  "main": "dist/index.js",
+  "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
+  "repository": "https://github.com/rokiiapp/plugins",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "rokii-build dev",
+    "build": "rokii-build build",
+    "prepublish": "rokii-build clear && pnpm build"
+  },
+  "dependencies": {
+    "@rokii/ui": "*",
+    "react": "*",
+    "@tauri-apps/api": "*"
+  },
+  "devDependencies": {
+    "@rokii/build": "*",
+    "@rokii/types": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

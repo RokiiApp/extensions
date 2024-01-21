@@ -29,8 +29,11 @@
       "react-dom": "$react-dom",
       "@types/react": "$@types/react",
       "typescript": "$typescript",
-      "@rokii/build": "2.0.2",
-      "@rokii/types": "4.0.0"
+      "@rokii/build": "latest",
+      "@rokii/types": "latest",
+      "@rokii/utils": "latest",
+      "@rokii/ui": "latest",
+      "@tauri-apps/api": "1.5.3"
     }
   }
 }
