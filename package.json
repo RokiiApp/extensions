@@ -11,6 +11,7 @@
     "publish-packages": "turbo run lint build && changeset version && changeset publish"
   },
   "devDependencies": {
+    "@rokii/api": "0.3.0",
     "@changesets/cli": "2.27.1",
     "@typescript-eslint/eslint-plugin": "6.19.0",
     "@typescript-eslint/parser": "6.19.0",
@@ -33,6 +34,7 @@
       "@rokii/types": "latest",
       "@rokii/utils": "latest",
       "@rokii/ui": "latest",
+      "@rokii/api": "$@rokii/api",
       "@tauri-apps/api": "1.5.3"
     }
   }

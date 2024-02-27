@@ -4,13 +4,13 @@
     "description": "A plugin for Rokii for testing purposes",
     "type": "module",
     "scripts": {
-        "build": "rokii-build build",
+        "build": "tsc",
         "dev": "rokii-build dev"
     },
     "devDependencies": {
-        "react": "*",
+        "typescript": "*",
         "@rokii/build": "*",
-        "@rokii/types": "*"
+        "@rokii/api": "*"
     },
     "files": [
         "dist"
