@@ -1,5 +1,15 @@
 # @rokii-plugins/test
 
+## 0.1.0
+
+### Minor Changes
+
+- c57da36: Move to new Rokii api
+
+### Patch Changes
+
+- 1374c1f: migrate to new Rokii API
+
 ## 0.0.2
 
 ### Patch Changes
