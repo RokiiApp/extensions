@@ -1,11 +1,12 @@
-import { Engine } from 'types';
+import { Setting } from '@rokii/api';
+
+import type { Engine } from 'types';
 
 export const SearchEngines: Engine[] = [
   'Google',
   'Brave',
   'DuckDuckGo',
   'Ecosia',
-  'MetaGer',
   'StartPage'
 ];
 
@@ -21,16 +22,23 @@ const generateOptions = (): Array<{ value: string; label: string }> => {
   return options;
 };
 
-export default {
+const settings: Record<string, Setting> = {
   'Search Engine': {
-    type: 'option',
+    id: 'Search Engine',
+    label: 'Search Engine',
+    type: 'string',
     options: generateOptions(),
-    defaultValue: { value: 'Google', label: 'Google' },
+    defaultValue: 'Google',
     description: 'Select a search engine'
   },
   'Search Link': {
+    id: 'Search Link',
+    label: 'Search Link',
+    defaultValue: '',
     type: 'string',
     description:
       'The link your search engine uses to search. I.e.\nhttps://google.com/search?q='
   }
 };
+
+export default settings;

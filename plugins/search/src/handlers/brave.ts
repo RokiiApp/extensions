@@ -1,33 +1,16 @@
 import { fetch } from '@tauri-apps/api/http';
 import { EngineHandler, Suggestion, SuggestionGetter } from 'types';
-import icon from 'icons/brave.png';
-import ShowSuggestions from 'components/ShowSuggestions';
 
 const SUGGESTIONS_URL = 'https://search.brave.com/api/suggest?q=';
 
 const SEARCH_URL = 'https://search.brave.com/search?q=';
 
-const brave: EngineHandler = ({ term, actions, display, order }) => {
-  const title = `Search: ${term}`;
+const brave: EngineHandler = async (term) => {
+  const results = await getSuggestions(term);
 
-  const searchFn = (q: string) => {
-    actions.open(`${SEARCH_URL}${q}`);
-    actions.hideWindow();
-  };
+  const getSearchString = (q: string) => `${SEARCH_URL}${q}`;
 
-  display({
-    title,
-    icon,
-    onSelect: () => searchFn(term),
-    getPreview: () => (
-      <ShowSuggestions
-        suggestionGetter={getSuggestions}
-        term={term}
-        searchFn={searchFn}
-      />
-    ),
-    order
-  });
+  return { results, getSearchString };
 };
 
 export default brave;

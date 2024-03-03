@@ -1,7 +1,3 @@
-import { PluginContext } from '@rokii/types';
-
-export type EngineHandler = (args: PluginContext & { order: number }) => void;
-
 export type Suggestion = {
   title: string;
   description?: string;
@@ -14,5 +10,9 @@ export type Engine =
   | 'DuckDuckGo'
   | 'Ecosia'
   | 'Brave'
-  | 'MetaGer'
   | 'StartPage';
+
+export type EngineHandler = (term: string) => Promise<{
+    results: Suggestion[];
+    getSearchString: (q: string) => string;
+  }>;

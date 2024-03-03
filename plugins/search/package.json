@@ -5,23 +5,22 @@
   "main": "dist/index.js",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
   "repository": "https://github.com/rokiiapp/plugins",
+  "type": "module",
   "license": "MIT",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "rokii-build dev",
-    "build": "rokii-build build",
-    "prepublish": "rokii-build clear && pnpm build"
+    "start": "vite build --watch",
+    "build": "vite build",
+    "prepublish": "pnpm build"
   },
   "dependencies": {
-    "@rokii/ui": "*",
-    "react": "*",
     "@tauri-apps/api": "*"
   },
   "devDependencies": {
-    "@rokii/build": "*",
-    "@rokii/types": "*"
+    "@rokii/types": "*",
+    "vite": "5.1.4"
   },
   "publishConfig": {
     "access": "public"

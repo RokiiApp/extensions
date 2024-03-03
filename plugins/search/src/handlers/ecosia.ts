@@ -1,33 +1,16 @@
 import { fetch } from '@tauri-apps/api/http';
 import { EngineHandler, Suggestion, SuggestionGetter } from 'types';
-import icon from 'icons/ecosia.png';
-import ShowSuggestions from 'components/ShowSuggestions';
 
 const SUGGESTIONS_URL = 'http://ac.ecosia.org/autocomplete?q=';
 
 const SEARCH_URL = 'https://www.ecosia.org/search?q=';
 
-const ecosia: EngineHandler = ({ term, actions, display, order }) => {
-  const title = `Search: ${term}`;
+const ecosia: EngineHandler = async (term) => {
+  const results = await getSuggestions(term);
 
-  const searchFn = (q: string) => {
-    actions.open(`${SEARCH_URL}${q}`);
-    actions.hideWindow();
-  };
+  const getSearchString = (q: string) => `${SEARCH_URL}${q}`;
 
-  display({
-    title,
-    icon,
-    onSelect: () => searchFn(term),
-    getPreview: () => (
-      <ShowSuggestions
-        suggestionGetter={getSuggestions}
-        term={term}
-        searchFn={searchFn}
-      />
-    ),
-    order
-  });
+  return { results, getSearchString };
 };
 
 export default ecosia;
