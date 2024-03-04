@@ -1,4 +1,4 @@
-import { AppItem, ExtensionModule, ScriptItem } from '@rokii/api';
+import { AppItem, ExtensionModule, InfoItem, ScriptItem } from '@rokii/api';
 import {
   google,
   duckduckgo,
@@ -49,6 +49,13 @@ const EngineSearchApp: ExtensionModule['run'] = async ({ term, display, actions,
   const icon = icons[engine] || defaultIcon;
   const handler = handlers[engine] || google;
   const { getSearchString, results } = await handler(term);
+
+  const noResultsItem = new InfoItem({
+    title: `No results found for "${term}" on ${engine}.`,
+    icon
+  });
+
+  if (!results.length) return display([noResultsItem]);
 
   const items = results.map(result => {
     return new ScriptItem({
