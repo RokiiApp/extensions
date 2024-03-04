@@ -31,7 +31,6 @@ const run: ExtensionModule['run'] = async ({ term, actions, settings, display })
     });
     return display([item]);
   }
-
   // handle built-in search engines
   const engine = settings['Search Engine'] as Engine;
   const engineIcon = icons[engine];

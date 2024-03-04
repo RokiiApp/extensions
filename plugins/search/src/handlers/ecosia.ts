@@ -1,7 +1,7 @@
 import { fetch } from '@tauri-apps/api/http';
 import { EngineHandler, Suggestion, SuggestionGetter } from 'types';
 
-const SUGGESTIONS_URL = 'http://ac.ecosia.org/autocomplete?q=';
+const SUGGESTIONS_URL = 'https://ac.ecosia.org/autocomplete?q=';
 
 const SEARCH_URL = 'https://www.ecosia.org/search?q=';
 

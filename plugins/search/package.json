@@ -11,16 +11,16 @@
     "dist"
   ],
   "scripts": {
-    "start": "vite build --watch",
-    "build": "vite build",
+    "start": "rokii-build dev",
+    "build": "rokii-build build",
     "prepublish": "pnpm build"
   },
   "dependencies": {
+    "@rokii/api": "*",
     "@tauri-apps/api": "*"
   },
   "devDependencies": {
-    "@rokii/types": "*",
-    "vite": "5.1.4"
+    "@rokii/build": "*"
   },
   "publishConfig": {
     "access": "public"
