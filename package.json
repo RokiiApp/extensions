@@ -11,30 +11,26 @@
     "publish-packages": "turbo run lint build && changeset version && changeset publish"
   },
   "devDependencies": {
-    "@rokii/api": "0.3.1",
     "@changesets/cli": "2.27.1",
-    "@typescript-eslint/eslint-plugin": "7.1.0",
-    "@typescript-eslint/parser": "7.1.0",
+    "@typescript-eslint/eslint-plugin": "7.1.1",
+    "@typescript-eslint/parser": "7.1.1",
     "eslint": "8.57.0",
     "semistandard": "17.0.0",
     "standard": "17.1.0",
     "turbo": "1.12.4",
-    "typescript": "5.3.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@types/react": "18.2.61"
+    "typescript": "5.3.3"
   },
   "pnpm": {
     "overrides": {
-      "react": "$react",
-      "react-dom": "$react-dom",
-      "@types/react": "$@types/react",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "@types/react": "18.2.62",
       "typescript": "$typescript",
-      "@rokii/build": "latest",
+      "@rokii/build": "2.0.11",
       "@rokii/types": "latest",
       "@rokii/utils": "latest",
       "@rokii/ui": "latest",
-      "@rokii/api": "$@rokii/api",
+      "@rokii/api": "0.4.1",
       "@tauri-apps/api": "1.5.3"
     }
   }
