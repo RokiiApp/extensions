@@ -1,6 +1,6 @@
 {
   "name": "@rokii-plugins/search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Use your favourite search engine in RokiiApp",
   "main": "dist/index.js",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",

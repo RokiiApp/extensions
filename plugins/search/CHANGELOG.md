@@ -1,5 +1,12 @@
 # @rokii-plugins/search
 
+## 1.0.2
+
+### Patch Changes
+
+- 11a102f: Migrate to rokii/build + fix https error
+- 25631e0: Handle empty results
+
 ## 1.0.1
 
 ### Patch Changes
