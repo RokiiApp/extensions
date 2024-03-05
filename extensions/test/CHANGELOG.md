@@ -1,5 +1,12 @@
 # @rokii-plugins/test
 
+## [0.1.1](https://github.com/RokiiApp/plugins/compare/test-v0.1.0...test-v0.1.1) (2024-03-05)
+
+
+### Bug Fixes
+
+* force release ([0feab4d](https://github.com/RokiiApp/plugins/commit/0feab4d208b11eda46d2c2ba19d8a9afa375df38))
+
 ## 0.1.0
 
 ### Minor Changes
