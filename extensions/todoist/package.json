@@ -27,5 +27,8 @@
     "build": "rokii-build build",
     "clear": "rokii-build clear",
     "prepublish": "pnpm clear && pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
