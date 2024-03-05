@@ -1,6 +1,7 @@
 {
     "packages": {
         "extensions/search": {},
-        "extensions/test": {}
+        "extensions/test": {},
+        "extensions/todoist": {}
     }
 }
