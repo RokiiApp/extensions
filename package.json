@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "turbo lint",
     "build": "turbo build",
-    "publish-packages": "turbo run lint build && changeset version && changeset publish"
+    "prepare-publish": "turbo run lint build"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
