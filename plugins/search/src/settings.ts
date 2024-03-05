@@ -1,4 +1,4 @@
-import { Setting } from '@rokii/api';
+import { Setting, SelectSetting, StringSetting } from '@rokii/api';
 
 import type { Engine } from 'types';
 
@@ -23,22 +23,20 @@ const generateOptions = (): Array<{ value: string; label: string }> => {
 };
 
 const settings: Record<string, Setting> = {
-  'Search Engine': {
+  'Search Engine': SelectSetting({
     id: 'Search Engine',
     label: 'Search Engine',
-    type: 'string',
     options: generateOptions(),
     defaultValue: 'Google',
     description: 'Select a search engine'
-  },
-  'Search Link': {
+  }),
+  'Search Link': StringSetting({
     id: 'Search Link',
     label: 'Search Link',
     defaultValue: '',
-    type: 'string',
     description:
       'The link your search engine uses to search. I.e.\nhttps://google.com/search?q='
-  }
+  })
 };
 
 export default settings;
