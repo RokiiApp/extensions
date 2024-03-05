@@ -26,7 +26,7 @@
       "react-dom": "18.2.0",
       "@types/react": "18.2.62",
       "typescript": "$typescript",
-      "@rokii/build": "2.0.11",
+      "@rokii/build": "2.0.13",
       "@rokii/types": "latest",
       "@rokii/utils": "latest",
       "@rokii/ui": "latest",
