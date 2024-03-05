@@ -1,6 +1,6 @@
 {
     "packages": {
-        "plugins/search": {},
-        "plugins/test": {}
+        "extensions/search": {},
+        "extensions/test": {}
     }
 }

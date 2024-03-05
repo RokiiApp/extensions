@@ -2,7 +2,7 @@
     <img
         alt="Rokii logo"
         width="220"
-        src="https://raw.githubusercontent.com/RokiiApp/plugins/main/assets/icon.svg"
+        src="https://raw.githubusercontent.com/RokiiApp/extensions/main/assets/icon.svg"
     />
 </p>
 

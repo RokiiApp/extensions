@@ -1,4 +1,4 @@
 {
-    "plugins/test": "0.1.0",
-    "plugins/search": "1.0.2"
+    "extensions/test": "0.1.0",
+    "extensions/search": "1.0.2"
 }

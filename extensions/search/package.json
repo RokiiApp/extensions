@@ -4,7 +4,7 @@
   "description": "Use your favourite search engine in RokiiApp",
   "main": "dist/index.js",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
-  "repository": "https://github.com/rokiiapp/plugins",
+  "repository": "https://github.com/rokiiapp/extensions",
   "type": "module",
   "license": "MIT",
   "files": [
