@@ -1,9 +1,9 @@
 import { ExtensionModule, AppItem, ScriptItem, InfoItem } from '@rokii/api';
-// import { TodoistApi } from '@doist/todoist-api-typescript';
 import { createTask } from './services';
 import icon from './icons/icon.png';
 import { settings } from './settings';
 import TodayTasks from './apps/TodayTasks';
+import ViewTasks from './apps/ViewTasks';
 import lang from './lang';
 
 if (!Notification.permission) Notification.requestPermission();
@@ -53,8 +53,8 @@ const TodoistExtension: ExtensionModule = {
   icon,
   run,
   apps: {
-    [APP_NAMES.today]: TodayTasks
-    // [APP_NAMES.view]: null
+    [APP_NAMES.today]: TodayTasks,
+    [APP_NAMES.view]: ViewTasks
   },
   settings
 };
