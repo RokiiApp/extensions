@@ -20,7 +20,7 @@ const taskToItem = (task: Task, api: TodoistApi): ScriptItem => {
 const TodayTasks: ExtensionModule['run'] = async (ctx) => {
   const { display, hide, settings, term } = ctx;
 
-  const token = settings.token;
+  const { showOverdue, token } = settings;
 
   const apiClient = new TodoistApi(token);
 
@@ -28,7 +28,8 @@ const TodayTasks: ExtensionModule['run'] = async (ctx) => {
 
   // When we empty the search term, we update the todayTasks
   if (term === '') {
-    todayTasks = await apiClient.getTasks({ filter: 'today' });
+    const filter = showOverdue ? '(today | overdue)' : 'today';
+    todayTasks = await apiClient.getTasks({ filter });
   }
 
   hide('loading');
