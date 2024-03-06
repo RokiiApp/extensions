@@ -12,17 +12,17 @@ const APP_NAMES = {
   view: 'tds_view'
 };
 
-const todayAppLauncher = new AppItem({
+const todayAppLauncherFabric = (command: string) => new AppItem({
   title: 'View Today Tasks',
   icon,
-  keyword: ['tds today'],
+  keyword: [`tds ${command}`],
   appName: APP_NAMES.today
 });
 
-const viewAppLauncher = new AppItem({
+const viewAppLauncherFabric = (command: string) => new AppItem({
   title: 'View X Day Tasks',
   icon,
-  keyword: ['tds view'],
+  keyword: [`tds ${command}`],
   appName: APP_NAMES.view
 });
 
@@ -37,9 +37,12 @@ const run: ExtensionModule['run'] = async (ctx) => {
   const createTaskItem = new ScriptItem({
     title: 'New Task',
     icon,
-    keyword: ['tds new'],
+    keyword: [`tds ${settings.newTaskCommand}`],
     run: () => createTask(token, { text: term })
   });
+
+  const todayAppLauncher = todayAppLauncherFabric(settings.todayTaskCommand);
+  const viewAppLauncher = viewAppLauncherFabric(settings.xDayTaskCommand);
 
   display([todayAppLauncher, viewAppLauncher, createTaskItem]);
 };
