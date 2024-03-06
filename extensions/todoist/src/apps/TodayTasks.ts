@@ -1,6 +1,6 @@
 import { ExtensionModule, InfoItem, ScriptItem } from '@rokii/api';
 import { TodoistApi, Task } from '@doist/todoist-api-typescript';
-import { completeTask } from '../services/taskServices';
+import { completeTask, getTaskHour } from '../services/taskServices';
 import lang from '../lang';
 
 let todayTasks: Task[] = [];
@@ -11,7 +11,7 @@ const taskToItem = (task: Task, api: TodoistApi): ScriptItem => {
   return new ScriptItem({
     id: task.id,
     title: task.content,
-    subtitle: task.due?.date,
+    subtitle: getTaskHour(task),
     run: async () => {
       completeTask(api, task);
     }
