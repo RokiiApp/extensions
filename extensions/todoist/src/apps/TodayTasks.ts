@@ -1,10 +1,11 @@
 import { ExtensionModule, InfoItem, ScriptItem } from '@rokii/api';
 import { TodoistApi, Task } from '@doist/todoist-api-typescript';
 import { completeTask } from '../services/taskServices';
+import lang from '../lang';
 
 let todayTasks: Task[] = [];
 
-const loadingItem = new InfoItem({ title: 'Searching today tasks...', id: 'loading' });
+const loadingItem = new InfoItem({ title: lang.gettingTasksMessage, id: 'loading' });
 
 const taskToItem = (task: Task, api: TodoistApi): ScriptItem => {
   return new ScriptItem({

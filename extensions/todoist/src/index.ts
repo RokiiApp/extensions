@@ -4,6 +4,7 @@ import { createTask } from './services';
 import icon from './icons/icon.png';
 import { settings } from './settings';
 import TodayTasks from './apps/TodayTasks';
+import lang from './lang';
 
 if (!Notification.permission) Notification.requestPermission();
 
@@ -13,20 +14,20 @@ const APP_NAMES = {
 };
 
 const todayAppLauncherFabric = (command: string) => new AppItem({
-  title: 'View Today Tasks',
+  title: lang.workflow_today,
   icon,
   keyword: [`tds ${command}`],
   appName: APP_NAMES.today
 });
 
 const viewAppLauncherFabric = (command: string) => new AppItem({
-  title: 'View X Day Tasks',
+  title: lang.workflow_view,
   icon,
   keyword: [`tds ${command}`],
   appName: APP_NAMES.view
 });
 
-const noTokenFound = new InfoItem({ title: 'No token found' });
+const noTokenFound = new InfoItem({ title: lang.noTokenFound });
 
 const run: ExtensionModule['run'] = async (ctx) => {
   const { display, settings, term } = ctx;
@@ -35,7 +36,7 @@ const run: ExtensionModule['run'] = async (ctx) => {
   if (!token) return display([noTokenFound]);
 
   const createTaskItem = new ScriptItem({
-    title: 'New Task',
+    title: lang.workflow_new,
     icon,
     keyword: [`tds ${settings.newTaskCommand}`],
     run: () => createTask(token, { text: term })
