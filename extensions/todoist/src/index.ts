@@ -3,6 +3,7 @@ import { ExtensionModule, AppItem, ScriptItem, InfoItem } from '@rokii/api';
 import { createTask } from './services';
 import icon from './icons/icon.png';
 import { settings } from './settings';
+import TodayTasks from './apps/TodayTasks';
 
 if (!Notification.permission) Notification.requestPermission();
 
@@ -36,7 +37,7 @@ const run: ExtensionModule['run'] = async (ctx) => {
   const createTaskItem = new ScriptItem({
     title: 'New Task',
     icon,
-    keyword: ['tds'],
+    keyword: ['tds new'],
     run: () => createTask(token, { text: term })
   });
 
@@ -48,7 +49,7 @@ const TodoistExtension: ExtensionModule = {
   icon,
   run,
   apps: {
-    // [APP_NAMES.today]: null,
+    [APP_NAMES.today]: TodayTasks
     // [APP_NAMES.view]: null
   },
   settings
