@@ -16,20 +16,20 @@
     "eslint": "8.57.0",
     "semistandard": "17.0.0",
     "standard": "17.1.0",
-    "turbo": "1.12.4",
-    "typescript": "5.3.3"
+    "turbo": "1.12.5",
+    "typescript": "5.4.2"
   },
   "pnpm": {
     "overrides": {
       "react": "18.2.0",
       "react-dom": "18.2.0",
-      "@types/react": "18.2.63",
+      "@types/react": "18.2.64",
       "typescript": "$typescript",
       "@rokii/build": "2.0.13",
       "@rokii/types": "latest",
       "@rokii/utils": "latest",
       "@rokii/ui": "latest",
-      "@rokii/api": "0.4.1",
+      "@rokii/api": "0.5.0",
       "@tauri-apps/api": "1.5.3"
     }
   }
