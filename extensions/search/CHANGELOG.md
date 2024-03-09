@@ -1,5 +1,12 @@
 # @rokii-plugins/search
 
+## [1.0.4](https://github.com/RokiiApp/extensions/compare/search-v1.0.3...search-v1.0.4) (2024-03-09)
+
+
+### Bug Fixes
+
+* keep term when app selected ([395a8de](https://github.com/RokiiApp/extensions/commit/395a8dea6599202b4821967a92662a7f1781f8d3))
+
 ## [1.0.3](https://github.com/RokiiApp/plugins/compare/search-v1.0.2...search-v1.0.3) (2024-03-05)
 
 
