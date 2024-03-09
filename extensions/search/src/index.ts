@@ -8,7 +8,6 @@ import {
 } from './handlers';
 import { Engine, EngineHandler } from './types';
 import icons from './icons';
-import defaultIcon from './icons/default.png';
 import settings from './settings';
 
 const handlers: Record<Engine, EngineHandler> = {
@@ -26,7 +25,6 @@ const run: ExtensionModule['run'] = async ({ term, actions, settings, display })
   if (settings['Search Link']) {
     const item = new ScriptItem({
       title: `Search ${term}`,
-      icon: defaultIcon,
       run: () => actions.open(settings['Search Link'] + term)
     });
     return display([item]);
@@ -37,7 +35,7 @@ const run: ExtensionModule['run'] = async ({ term, actions, settings, display })
 
   const engineLauncherItem = new AppItem({
     appName: 'EngineSearch',
-    title: `Search ${term} with ${engine}.`,
+    title: `Search ${term} with ${engine}`,
     icon: engineIcon
   });
 
@@ -48,13 +46,13 @@ const EngineSearchApp: ExtensionModule['run'] = async (ctx) => {
   const { term, display, hide, actions, settings } = ctx;
 
   const engine = settings['Search Engine'] as Engine;
-  const icon = icons[engine] || defaultIcon;
+  const icon = icons[engine] || icons.Google;
   const handler = handlers[engine] || google;
   const { getSearchString, results } = await handler(term);
 
   const noResultsItem = new InfoItem({
     id: 'no-results',
-    title: `No results found for "${term}" on ${engine}.`,
+    title: `No results found for "${term}" on ${engine}`,
     icon
   });
 
@@ -79,7 +77,7 @@ const SerachExtension: ExtensionModule = {
   apps: {
     EngineSearch: EngineSearchApp
   },
-  icon: defaultIcon,
+  icon: icons.Google,
   settings
 };
 
