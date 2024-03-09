@@ -23,6 +23,7 @@ const run: ExtensionModule['run'] = async ({ term, actions, settings, display })
   const engineLauncherItem = new AppItem({
     appName: EngineSearchAppName,
     title: `Search ${term} with ${engine}`,
+    keepTerm: true,
     icon: engineIcon
   });
 
