@@ -1,5 +1,6 @@
 {
     "packages": {
+        "extensions/math": {},
         "extensions/search": {},
         "extensions/test": {},
         "extensions/todoist": {}
