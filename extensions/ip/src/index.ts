@@ -6,15 +6,15 @@ const noInternetItem = new InfoItem({
   subtitle: 'You are offline'
 });
 
+let ip = '';
+
 const run: ExtensionModule['run'] = async ({ display, actions }) => {
   if (navigator.onLine === false) {
     return display([noInternetItem]);
   }
 
-  const ip = await getIp();
-
   const ipItem = new ScriptItem({
-    title: 'Your IP',
+    title: 'IP:',
     subtitle: ip,
     run: async () => {
       actions.copyToClipboard(ip);
@@ -26,6 +26,13 @@ const run: ExtensionModule['run'] = async ({ display, actions }) => {
 
 const IpExtension: ExtensionModule = {
   name: 'Ip',
+  initializeAsync: async (send) => {
+    const ip = await getIp();
+    send(ip);
+  },
+  onMessage (dataIp) {
+    ip = dataIp as string;
+  },
   run,
   icon: ''
 };
