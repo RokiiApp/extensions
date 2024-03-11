@@ -1,5 +1,5 @@
 import { ExtensionModule, InfoItem, ScriptItem } from '@rokii/api';
-import { getIp } from 'getIp';
+import { getIp } from './getIp';
 
 const noInternetItem = new InfoItem({
   title: 'No IP Address Found',
