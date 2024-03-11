@@ -1,6 +1,6 @@
 {
     "extensions/ip": "0.1.0",
-    "extensions/math": "0.2.0",
+    "extensions/math": "0.2.1",
     "extensions/test": "0.1.1",
     "extensions/search": "1.0.4",
     "extensions/todoist": "0.2.1"
