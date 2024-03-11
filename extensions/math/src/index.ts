@@ -1,45 +1,42 @@
 import { ExtensionModule, ScriptItem } from '@rokii/api';
-
-const MATH_REGEXP = /^[\d\s-+/*%,.()]+$/;
+import { calculate } from './calculate';
+import { isMathExpression } from './isMathExpression';
 
 const run: ExtensionModule['run'] = async (ctx) => {
   const { term, display, actions } = ctx;
-  const match = term.match(MATH_REGEXP);
 
-  if (!match) return;
+  if (!isMathExpression(term)) return;
 
-  try {
-    const calculateTerm = term.replace(/,/g, '.');
+  const calculateTerm = term.replace(/,/g, '.');
 
-    // eslint-disable-next-line no-eval
-    const result = eval(calculateTerm);
+  const result = await calculate(calculateTerm);
 
-    if (typeof result !== 'number') return;
+  // Strict comparison to avoid filtering 0 or other falsy values
+  if (result === null) return;
 
-    if (Number.isNaN(result)) {
-      const indeterminateItem = new ScriptItem({
-        title: term + ' = indeterminate',
-        run: () => {
-          actions.copyToClipboard('indeterminate');
-        }
-      });
-        // When user tries to devide 0 by 0
-      display([indeterminateItem]);
-      return;
-    }
-    const stringResult = result.toLocaleString();
-
-    const resultItem = new ScriptItem({
-      title: term + ' = ' + stringResult,
+  if (Number.isNaN(result)) {
+    const indeterminateItem = new ScriptItem({
+      order: -Infinity,
+      title: term + ' = indeterminate',
       run: () => {
-        actions.copyToClipboard(stringResult);
+        actions.copyToClipboard('indeterminate');
       }
     });
-
-    display([resultItem]);
-  } catch (err) {
-    // Do nothing when eval failed
+    // When user tries to devide 0 by 0
+    display([indeterminateItem]);
+    return;
   }
+  const stringResult = result.toLocaleString();
+
+  const resultItem = new ScriptItem({
+    order: -Infinity,
+    title: term + ' = ' + stringResult,
+    run: () => {
+      actions.copyToClipboard(stringResult);
+    }
+  });
+
+  display([resultItem]);
 };
 
 const MathExtension: ExtensionModule = {
