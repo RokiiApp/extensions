@@ -27,7 +27,7 @@
       "typescript": "$typescript",
       "@rokii/build": "2.0.13",
       "@rokii/utils": "2.0.9",
-      "@rokii/api": "0.7.1",
+      "@rokii/api": "0.8.0",
       "@tauri-apps/api": "1.5.3"
     }
   }
