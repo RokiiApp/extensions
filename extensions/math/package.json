@@ -1,6 +1,6 @@
 {
   "name": "@rokii-plugins/math",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Do quick math operations on Rokii",
   "main": "dist/index.js",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",

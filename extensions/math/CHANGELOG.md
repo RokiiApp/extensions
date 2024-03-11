@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/RokiiApp/extensions/compare/math-v0.2.0...math-v0.2.1) (2024-03-11)
+
+
+### Bug Fixes
+
+* Improve calculations ([efb9a2a](https://github.com/RokiiApp/extensions/commit/efb9a2a4c75bce4c901e4f00ff5d904a1db48664))
+
 ## [0.2.0](https://github.com/RokiiApp/extensions/compare/math-v0.1.0...math-v0.2.0) (2024-03-09)
 
 
