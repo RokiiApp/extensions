@@ -1,5 +1,6 @@
 {
     "packages": {
+        "extensions/ip": {},
         "extensions/math": {},
         "extensions/search": {},
         "extensions/test": {},

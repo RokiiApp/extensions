@@ -1,4 +1,5 @@
 {
+    "extensions/ip": "0.1.0",
     "extensions/math": "0.2.0",
     "extensions/test": "0.1.1",
     "extensions/search": "1.0.4",

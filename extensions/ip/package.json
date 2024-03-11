@@ -1,0 +1,28 @@
+{
+  "name": "@rokii-plugins/ip",
+  "version": "0.1.0",
+  "description": "Check your current IP address",
+  "main": "dist/index.js",
+  "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
+  "repository": "https://github.com/rokiiapp/extensions",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "rokii-build dev",
+    "build": "rokii-build build",
+    "prepublish": "pnpm build"
+  },
+  "dependencies": {
+    "@rokii/api": "*",
+    "@tauri-apps/api": "*"
+  },
+  "devDependencies": {
+    "@rokii/build": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
