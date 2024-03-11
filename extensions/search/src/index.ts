@@ -2,7 +2,7 @@ import { AppItem, ExtensionModule, ScriptItem } from '@rokii/api';
 import { Engine } from './types';
 import icons from './icons';
 import settings from './settings';
-import { EngineSearchApp, EngineSearchAppName } from './EngineSearchApp';
+import { EngineSearchApp } from './EngineSearchApp';
 
 const run: ExtensionModule['run'] = async ({ term, actions, settings, display }) => {
   if (!navigator.onLine) return;
@@ -21,7 +21,7 @@ const run: ExtensionModule['run'] = async ({ term, actions, settings, display })
   const engineIcon = icons[engine];
 
   const engineLauncherItem = new AppItem({
-    appName: EngineSearchAppName,
+    appName: EngineSearchApp.id,
     title: `Search ${term} with ${engine}`,
     keepTerm: true,
     icon: engineIcon
@@ -33,9 +33,7 @@ const run: ExtensionModule['run'] = async ({ term, actions, settings, display })
 const SerachExtension: ExtensionModule = {
   name: 'Search',
   run,
-  apps: {
-    [EngineSearchAppName]: EngineSearchApp
-  },
+  apps: [EngineSearchApp],
   icon: icons.Google,
   settings
 };

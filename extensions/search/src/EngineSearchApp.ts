@@ -1,4 +1,4 @@
-import { ExtensionModule, InfoItem, ScriptItem } from '@rokii/api';
+import { App, ExtensionModule, InfoItem, ScriptItem } from '@rokii/api';
 import {
   google,
   duckduckgo,
@@ -17,9 +17,7 @@ const handlers: Record<Engine, EngineHandler> = {
   StartPage: startpage
 };
 
-export const EngineSearchAppName = 'EngineSearch';
-
-export const EngineSearchApp: ExtensionModule['run'] = async (ctx) => {
+const EngineSearchRun: ExtensionModule['run'] = async (ctx) => {
   const { term, display, hide, actions, settings } = ctx;
 
   const engine = settings['Search Engine'] as Engine;
@@ -46,4 +44,9 @@ export const EngineSearchApp: ExtensionModule['run'] = async (ctx) => {
   });
 
   display(items);
+};
+
+export const EngineSearchApp: App = {
+  id: 'EngineSearch',
+  run: EngineSearchRun
 };
