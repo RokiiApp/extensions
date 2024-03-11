@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/RokiiApp/extensions/compare/todoist-v0.2.0...todoist-v0.2.1) (2024-03-09)
+
+
+### Bug Fixes
+
+* Remove unusde dependencies ([2d0f694](https://github.com/RokiiApp/extensions/commit/2d0f69431e4245625e17c2041c4fcb8db983d2aa))
+
 ## [0.2.0](https://github.com/RokiiApp/extensions/compare/todoist-v0.1.0...todoist-v0.2.0) (2024-03-06)
 
 
