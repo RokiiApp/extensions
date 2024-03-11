@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/RokiiApp/extensions/compare/ip-v0.2.1...ip-v0.2.2) (2024-03-11)
+
+
+### Bug Fixes
+
+* avoid getting the ip each time ([6d19960](https://github.com/RokiiApp/extensions/commit/6d19960de2580971015f28d30b28cf942ade191d))
+
 ## [0.2.1](https://github.com/RokiiApp/extensions/compare/ip-v0.2.0...ip-v0.2.1) (2024-03-11)
 
 
