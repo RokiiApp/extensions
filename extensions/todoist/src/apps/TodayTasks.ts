@@ -1,4 +1,4 @@
-import { ExtensionModule, InfoItem, ScriptItem } from '@rokii/api';
+import { ExtensionModule, InfoItem, ScriptItem, App } from '@rokii/api';
 import { TodoistApi, Task } from '@doist/todoist-api-typescript';
 import { completeTask, getTaskHour } from '../services/taskServices';
 import lang from '../lang';
@@ -18,7 +18,7 @@ const taskToItem = (task: Task, api: TodoistApi): ScriptItem => {
   });
 };
 
-const TodayTasks: ExtensionModule['run'] = async (ctx) => {
+const TodayTasksRun: ExtensionModule['run'] = async (ctx) => {
   const { display, hide, settings, term } = ctx;
 
   const { showOverdue, token } = settings;
@@ -39,4 +39,7 @@ const TodayTasks: ExtensionModule['run'] = async (ctx) => {
   display(items);
 };
 
-export default TodayTasks;
+export const TodayTasks: App = {
+  id: 'TodayTasks',
+  run: TodayTasksRun
+};

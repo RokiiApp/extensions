@@ -2,29 +2,24 @@ import { ExtensionModule, AppItem, ScriptItem, InfoItem } from '@rokii/api';
 import { createTask } from './services';
 import icon from './icons/icon.png';
 import { settings } from './settings';
-import TodayTasks from './apps/TodayTasks';
-import ViewTasks from './apps/ViewTasks';
+import { TodayTasks } from './apps/TodayTasks';
+import { ViewTasks } from './apps/ViewTasks';
 import lang from './lang';
 
 if (!Notification.permission) Notification.requestPermission();
-
-const APP_NAMES = {
-  today: 'tds_today',
-  view: 'tds_view'
-};
 
 const todayAppLauncherFabric = (command: string) => new AppItem({
   title: lang.workflow_today,
   icon,
   keyword: [`tds ${command}`],
-  appName: APP_NAMES.today
+  appName: TodayTasks.id
 });
 
 const viewAppLauncherFabric = (command: string) => new AppItem({
   title: lang.workflow_view,
   icon,
   keyword: [`tds ${command}`],
-  appName: APP_NAMES.view
+  appName: ViewTasks.id
 });
 
 const noTokenFound = new InfoItem({ title: lang.noTokenFound });
@@ -52,10 +47,7 @@ const TodoistExtension: ExtensionModule = {
   name: 'Todoist',
   icon,
   run,
-  apps: {
-    [APP_NAMES.today]: TodayTasks,
-    [APP_NAMES.view]: ViewTasks
-  },
+  apps: [TodayTasks, ViewTasks],
   settings
 };
 
