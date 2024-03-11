@@ -6,5 +6,5 @@
     />
 </p>
 
-<h1 align="center">Rokii Plugins</h1>
-<h4 align="center">Plugins for Rokii app</h4>
+<h1 align="center">Rokii Extensions</h1>
+<h4 align="center">Extensions for Rokii app</h4>
