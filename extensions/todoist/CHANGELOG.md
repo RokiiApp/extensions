@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/RokiiApp/extensions/compare/todoist-v0.2.2...todoist-v0.2.3) (2024-03-16)
+
+
+### Bug Fixes
+
+* move to new fetch api ([9fa1f81](https://github.com/RokiiApp/extensions/commit/9fa1f8175f14000c24571b6d36f0716ab0178656))
+
 ## [0.2.2](https://github.com/RokiiApp/extensions/compare/todoist-v0.2.1...todoist-v0.2.2) (2024-03-11)
 
 
