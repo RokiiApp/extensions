@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/RokiiApp/extensions/compare/ip-v0.2.2...ip-v0.2.3) (2024-03-16)
+
+
+### Bug Fixes
+
+* use https plugin ([4c7b201](https://github.com/RokiiApp/extensions/commit/4c7b2019017cd404038194adbf6d6015f8192d33))
+
 ## [0.2.2](https://github.com/RokiiApp/extensions/compare/ip-v0.2.1...ip-v0.2.2) (2024-03-11)
 
 

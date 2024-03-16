@@ -1,6 +1,6 @@
 {
   "name": "@rokii-plugins/ip",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Check your current IP address",
   "main": "dist/index.js",
   "author": "David Jiménez <dubisdev@gmail.com> (https://dubis.dev)",
