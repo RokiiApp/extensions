@@ -1,4 +1,4 @@
-import { fetch } from '@tauri-apps/api/http';
+import { fetch } from '@tauri-apps/plugin-http';
 import { EngineHandler, Suggestion, SuggestionGetter } from 'types';
 
 const SUGGESTIONS_URL =
@@ -20,8 +20,8 @@ export default google;
  * Get suggestions for entered query
  */
 const getSuggestions: SuggestionGetter = async (term: string) => {
-  return fetch<Array<string[]>>(`${SUGGESTIONS_URL}${term}`)
-    .then((response) => response.data)
+  return fetch(`${SUGGESTIONS_URL}${term}`)
+    .then((response) => response.json())
     .then((response) => (response[1] || []))
     .then((res) => res.map(mapToSuggestion));
 };

@@ -1,4 +1,4 @@
-import { fetch } from '@tauri-apps/api/http';
+import { fetch } from '@tauri-apps/plugin-http';
 import { EngineHandler, Suggestion, SuggestionGetter } from 'types';
 
 const SUGGESTIONS_URL = 'https://ac.ecosia.org/autocomplete?q=';
@@ -19,8 +19,8 @@ export default ecosia;
  * Get suggestions for entered query
  */
 const getSuggestions: SuggestionGetter = async (term: string) => {
-  return fetch<{ suggestions: string[] }>(`${SUGGESTIONS_URL}${term}`)
-    .then((response) => response.data)
+  return fetch(`${SUGGESTIONS_URL}${term}`)
+    .then((response) => response.json())
     .then((response) => (response.suggestions || []))
     .then((res) => res.map(mapToSuggestion));
 };
