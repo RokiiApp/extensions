@@ -11,6 +11,7 @@
   ],
   "dependencies": {
     "@rokii/api": "*",
+    "@tauri-apps/plugin-http": "2.0.0-beta.2",
     "@doist/todoist-api-typescript": "3.0.2",
     "cerebro-command-router": "2.0.0",
     "semver": "7.6.0"
