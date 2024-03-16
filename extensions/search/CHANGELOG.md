@@ -1,5 +1,12 @@
 # @rokii-plugins/search
 
+## [1.0.5](https://github.com/RokiiApp/extensions/compare/search-v1.0.4...search-v1.0.5) (2024-03-11)
+
+
+### Bug Fixes
+
+* Migrate to new Apps API ([6f24b10](https://github.com/RokiiApp/extensions/commit/6f24b1066040c4d1019803f4df29ca87db853724))
+
 ## [1.0.4](https://github.com/RokiiApp/extensions/compare/search-v1.0.3...search-v1.0.4) (2024-03-09)
 
 
