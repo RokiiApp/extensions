@@ -1,3 +1,5 @@
+import { fetch } from '@tauri-apps/plugin-http';
+
 const IP_API = 'https://api.ipify.org?format=json';
 
 export const getIp = async () => {

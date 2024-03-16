@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@rokii/api": "*",
-    "@tauri-apps/api": "*"
+    "@tauri-apps/plugin-http": "*"
   },
   "devDependencies": {
     "@rokii/build": "*"
